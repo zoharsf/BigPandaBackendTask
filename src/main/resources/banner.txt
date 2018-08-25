@@ -1,0 +1,36 @@
+${Ansi.BLUE}               .::::.                                `-:::-`
+${Ansi.BLUE}            .ohhhhhhhho.             `             :shhhhhhhy/`
+${Ansi.BLUE}           +hhhhhhhhhhhho` `.-:/+osyhhhyso+/-.`  -shhhhhhhhhhhy-
+${Ansi.BLUE}          +hhhhhhhhhhhhhhhhhhhhhhyso++osyyhhhhhhyhhhhhhhhhhhhhhh.
+${Ansi.BLUE}          shhhhhhhhhhhhyso+/:-.``         `.-:/+oosyhhhhhhhhhhhh:
+${Ansi.BLUE}          /hhhhhhhhh:``                            ``.shhhhhhhhh.
+${Ansi.BLUE}           +hhhhhhho                                  `hhhhhhhy-
+${Ansi.BLUE}            .ohhhhy`                                   :hhhhh/`
+${Ansi.BLUE}              -hhh:                                     shhs.
+${Ansi.BLUE}              :hho                                      .hhh`
+${Ansi.BLUE}        ..-::/shhs+++///::--.``              `..-::///+++yhh+/::--.
+${Ansi.BLUE}       .yhhhhyo+///:::///+oossyso+/:---::+osyssoo++///::///+oyhhhhy:
+${Ansi.BLUE}       `hhhh+`              ``.:shhhhhhhhhy/.``              `:hhhh-
+${Ansi.BLUE}        -yhh`                   `yhhyyyhhh`                    yhh:
+${Ansi.BLUE}         :hh`                    yho```/hh`                    yh+
+${Ansi.BLUE}          sh:                   -ho`    +h/                   .hy`
+${Ansi.BLUE}          .hy`                 :yo`      +h/`                 oh:
+${Ansi.BLUE}           -yy:`            `-oy/`        :ss:`            `-sy/
+${Ansi.BLUE}            `+hyo+/:-----:+ooo:`           `-ooo+:-----::/oyh+.
+${Ansi.BLUE}              shh-:://///:-.`  ./ooo++ooo+:   `.-://///::+hho
+${Ansi.BLUE}              -hh:             /hhhhhhhhhhy`             shh.
+${Ansi.BLUE}               ohy              .:/+sho+/-`             -hho
+${Ansi.BLUE}               `hh+-``         `````/h``````         `.-shh-
+${Ansi.BLUE}                -/oyys+:.`     +++++os+++++:    ``-/osyyo/-
+${Ansi.BLUE}                   `.-/oyss+:.`            ``-/osyyo/-.`
+${Ansi.BLUE}                        `.:+syso+//::-::/+osyyo/-.`
+${Ansi.BLUE}                             `.:://++o++//:-.
+${Ansi.BLUE}`++.       -oo                                               .+.
+${Ansi.BLUE}.hh-       -++                                               -h-
+${Ansi.BLUE}.hhosyhy+` /yy  .oyhyssyo .s+o+os/` `+o++oo-  oo+ooso.  :so+ooh- `+o++oo-
+${Ansi.BLUE}.hh+``-hho /hh `hho``-hho -ho   .h+ ./.```ys  sy.  `h+ /h-   +h- .+```.ho
+${Ansi.BLUE}.hh-   shy /hh .hh:   sho -h-    ss -oo++/ys  ss    h+ sy    -h- -oo++/ho
+${Ansi.BLUE}.hhs-./hh/ /hh  shy::+hho -ho`  :h/ yy`  -hs  ss    h+ /h:  `oh- yy   -ho
+${Ansi.BLUE}.oo/osso-  :oo  `:ooo/sho -h+oooo-  .oso+//s/ +/    o:  -osoo:o. -oso+:/s:
+${Ansi.BLUE}                oss::+hh: -h:
+${Ansi.BLUE}                 -/+++:`  `/.
