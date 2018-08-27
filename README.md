@@ -24,12 +24,17 @@ The service should consume the output of the generator and gather the following 
 ```
 java -jar <PATH_TO_JAR>
 ```
+* Open the following URL to see the statistics gathered by the Service (refresh page to update):
+```
+http://localhost:8080/stats
+```
 
 ### Future improvements:
 * Beautify statistics HTML page.
 * Get to know the Akka framework better and improve use of Streams.
 * Add an external properties file to allow changing properties without needing to rebuild service.
 * Support multiple IncomingEvent types in order to allow use with more than one type of generator blackboxes.
+* Add auto refresh to statistics HTML page
 
 ### Notes:
 * Gathered stats should be exposed via an HTTP interface.
