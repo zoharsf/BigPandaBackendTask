@@ -18,7 +18,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
 @Slf4j
@@ -26,24 +25,21 @@ import java.util.concurrent.CompletionStage;
 public class ApplicationManager implements CommandLineRunner {
 	
 	@Autowired
-	private EventCache eventCache;
-	
-	@Autowired
 	private ApplicationConfiguration applicationConfiguration;
 	
-	final ActorSystem actorSystem = ActorSystem.create("BigPanda");
+	private final ActorSystem actorSystem = ActorSystem.create("BigPanda");
 	
 	public ApplicationManager() {}
 	
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		
 		log.info("\n\n######################################################\nApplication is running, starting to read event stream.\n######################################################\n\n");
 		
-		run();
+		beginReadingEventStream();
 	}
 	
 	//reader
-	public void run() {
+	private void beginReadingEventStream() {
 		try {
 			Process process = new ProcessBuilder(applicationConfiguration.getStreamSource()).start();
 			InputStream processInputStream = process.getInputStream();
@@ -56,12 +52,12 @@ public class ApplicationManager implements CommandLineRunner {
 			}
 		}
 		catch (IOException e) {
-			log.debug("Error reading event stream: {}", e.getMessage());
+			log.error("Error reading event stream: {}", e.getMessage());
 		}
 	}
 	
-	private CompletionStage<Done> streamRawJson(String rawEvent) {
-		return Source.single(rawEvent).via(parseStream()).runWith(addToCache(), ActorMaterializer.create(actorSystem));
+	private void streamRawJson(String rawEvent) {
+		Source.single(rawEvent).via(parseStream()).runWith(addToCache(), ActorMaterializer.create(actorSystem));
 	}
 	
 	//parser
@@ -74,7 +70,7 @@ public class ApplicationManager implements CommandLineRunner {
 			
 		}
 		catch (IOException e) {
-			log.debug("Unable to parse incoming event: {}", rawEvent);
+			log.error("Unable to parse incoming event: {}", rawEvent);
 		}
 		return jsonEvent;
 	}
@@ -83,19 +79,8 @@ public class ApplicationManager implements CommandLineRunner {
 		return Flow.of(String.class).map(this::parseRawMessage);
 	}
 	
-	//cache
-	private static CompletionStage cacheIncomingEvent(IncomingEvent incomingEvent) {
-		return CompletableFuture.supplyAsync(() -> {
-			EventCache.addEventType(incomingEvent.getEventType());
-			log.info("Cache (eventType): {}", incomingEvent.getEventType());
-			EventCache.addWordAppearances(incomingEvent.getData());
-			log.info("Cache (word): {}", incomingEvent.getData());
-			return incomingEvent;
-		});
-	}
-	
-	public static Sink<IncomingEvent, CompletionStage<Done>> addToCache() {
-		return Flow.of(IncomingEvent.class).mapAsyncUnordered(4, EventCache::cacheIncomingEvent).toMat(Sink.ignore(), Keep.right());
+	private static Sink<IncomingEvent, CompletionStage<Done>> addToCache() {
+		return Flow.of(IncomingEvent.class).toMat(Sink.foreach(EventCache::cacheIncomingEvent), Keep.right());
 	}
 }
 

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class IncomingEvent {
+class IncomingEvent {
 	@JsonProperty("event_type")
 	private String eventType;
 	@JsonProperty("data")
