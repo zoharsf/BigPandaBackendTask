@@ -1,8 +1,8 @@
 # BigPandaBackendTask
 
-## Implementation of a non-blocking producer/consumer stream processing service that exposes an HTTP api.
+## Implementation of a non-blocking producer/consumer stream processing service that exposes an HTTP api
 
-### Stream origin
+### Stream origin:
 A blackbox generator that spits out an infinite stream of lines of event data encoded in JSON.
 
 ### The generator blackbox may be downloaded from either of these links:
@@ -26,10 +26,10 @@ java -jar <PATH_TO_JAR>
 ```
 
 ### Future improvements:
-* Beautify statistics HTML page
-* Get to know the Akka framework better and improve use of Streams
-* Add an external properties file to allow changing properties without needing to rebuild service
-* Support multiple IncomingEvent types in order to allow use with more than one type of generator blackboxes
+* Beautify statistics HTML page.
+* Get to know the Akka framework better and improve use of Streams.
+* Add an external properties file to allow changing properties without needing to rebuild service.
+* Support multiple IncomingEvent types in order to allow use with more than one type of generator blackboxes.
 
 ### Notes:
 * Gathered stats should be exposed via an HTTP interface.
