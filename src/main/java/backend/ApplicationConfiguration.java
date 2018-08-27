@@ -18,7 +18,4 @@ public class ApplicationConfiguration {
 	
 	@Value("${application.stream-source}")
 	private String streamSource;
-	
-	@Value("${parser.thread-count:1}")
-	private int numberOfParserThreads;
 }
